@@ -28,6 +28,8 @@ var vendorsJS = [
 
 gulp.task('watch', function() {
     gulp.watch('./tamrec-ui/less/*.less', ['compile-less']);
+    gulp.watch('./tamrec-ui/js/*.js', ['process-js']);
+    gulp.watch('./tamrec-ui/js/**/*.js', ['process-js']);
 });
 
 gulp.task('compile-less', function() {
