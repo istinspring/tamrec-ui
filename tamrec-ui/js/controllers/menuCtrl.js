@@ -16,8 +16,9 @@ ngTamrec.controller('MenuCtrl', function ($scope, $mdSidenav, $log) {
 
     $scope.close = function() {
         $mdSidenav('menu').close()
-        .then(function(){
+        .then(function() {
             $log.debug("close RIGHT is done");
         });
     };
+
 });
