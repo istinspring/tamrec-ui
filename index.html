@@ -16,9 +16,9 @@
 <body ng-app="ngTamrec" layout="column" ng-controller="IndexCtrl">
 
   <md-toolbar class="tamrec-steel-blue" layout="row">
-    <button ng-click="toggleSidenav('left')" class="menuBtn">
+    <md-button ng-click="toggleMenu()" class="menuBtn menuBtnWhite">
       <span class="visuallyhidden">Menu</span>
-    </button>
+    </md-button>
     <h1>Tamrecords</h1>
   </md-toolbar>
 
@@ -27,6 +27,27 @@
       <span>Branding: clickable</span>
     </h2>
   </md-toolbar>
+
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="menu">
+    <md-divider></md-divider>
+    <md-content ng-controller="MenuCtrl" class="md-padding">
+      <md-list>
+        <md-button ng-click="close()" class="md-primary menuBtn menuBtnBlack">
+          <span class="visuallyhidden">Menu</span>
+        </md-button>
+        <md-item ng-repeat="item in menuItems">
+          <md-item-content>
+            <div class="md-tile-left">
+              [icon]
+            </div>
+            <div class="md-tile-content">
+              <h3>{{ item }}</h3>
+            </div>
+          </md-item-content>
+        </md-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
 
   <!--
     Use `flex` [below] to have the side bar and content area
