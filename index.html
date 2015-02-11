@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <title>Tamrec-UI featured by AngularJS Material</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel="stylesheet" href="./build/vendors.min.css">
+  <link rel="stylesheet" href="./build/app.min.css">
+</head>
+
+<body ng-app="ngTamrec" layout="column" ng-controller="IndexCtrl">
+
+  <md-toolbar class="tamrec-steel-blue" layout="row">
+    <button ng-click="toggleSidenav('left')" class="menuBtn">
+      <span class="visuallyhidden">Menu</span>
+    </button>
+    <h1>Tamrecords</h1>
+  </md-toolbar>
+
+  <md-toolbar class="md-tall md-accent" layout="row">
+    <h2 class="md-toolbar-tools">
+      <span>Branding: clickable</span>
+    </h2>
+  </md-toolbar>
+
+  <!--
+    Use `flex` [below] to have the side bar and content area
+    fill the available vertical display area
+  -->
+
+  <div layout="row" flex>
+
+    <!--
+    Use `flex` [below] to have the content area
+    fill the available horizontal display area on the right side
+    -->
+
+    <div layout="column" flex class="content-wrapper" id="content">
+      <md-content layout="column" flex class="md-padding">
+        <branding>Content</branding>
+      </md-content>
+    </div>
+  </div>
+
+  <script src="./build/vendors.min.js"></script>
+  <script src="./build/app.min.js"></script>
+
+</body>
+
+</html>
