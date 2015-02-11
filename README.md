@@ -8,6 +8,8 @@ Based on mocks created by [DjBes](http://www.last.fm/music/DJ+Bes):
 + [Front Page](http://i.imgur.com/RnTMAyQ.jpg)
 + [Front Page with menu](http://i.imgur.com/NVVo7bM.jpg)
 
+[DEMO](http://ninjaside.info/tamrec-ui/)
+
 # Installation
 
 Clone repo:
