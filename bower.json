@@ -1,0 +1,27 @@
+{
+  "name": "tamrec-ui",
+  "version": "0.0.0",
+  "homepage": "https://github.com/istinspring/tamrec-ui",
+  "authors": [
+    "istinspring <istinspring@gmail.com>"
+  ],
+  "description": "ui elements for tamrecords.ru",
+  "keywords": [
+    "tamrecords",
+    "ui",
+    "meterial",
+    "design"
+  ],
+  "license": "GPL v2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "master"
+  }
+}

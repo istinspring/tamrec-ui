@@ -1,0 +1,9 @@
+# bower components & npm packages
+tamrec-ui/vendors
+node_modules
+
+# compiled assets
+tamrec-ui/build
+
+# misc
+npm-debug.log
