@@ -4,6 +4,7 @@ node_modules
 
 # compiled assets
 tamrec-ui/build
+gh-pages/
 
 # misc
 npm-debug.log
