@@ -1,4 +1,42 @@
-ngTamrec = angular.module('ngTamrec', ['ngMaterial']);
+ngTamrec = angular.module('ngTamrec',
+    [
+        'ngMaterial', 'angular-loading-bar', 'ngAnimate',
+        'ui.router'
+    ]
+);
+
+ngTamrec.config(function($stateProvider, $urlRouterProvider) {
+    // $urlRouterProvider.otherwise("/errorPage");
+    $stateProvider
+        .state('errorPage', {
+            url: "/errorPage",
+            templateUrl: "views/error.html"
+        })
+        .state('indexPage', {
+            url: '',
+            templateUrl: 'views/home.html'
+        })
+        .state('podcastsPage', {
+            url: "/podcasts",
+            templateUrl: "views/podcasts.html"
+        })
+        .state('newsPage', {
+            url: "/news",
+            templateUrl: "views/news.html"
+        });
+        // .state('sideNav', {
+        //     url: "/podcasts",
+        //     templateUrl: "views/podcasts.html",
+        //     controller: function($scope, $mdSidenav) {
+        //         $scope.toggleMenu = function() {
+        //             $mdSidenav('menu').toggle()
+        //             .then(function(){
+        //                 $log.debug("toggle RIGHT is done");
+        //             });
+        //         };
+        //     }
+        // });
+});
 
 ngTamrec.config(function($mdThemingProvider) {
     $mdThemingProvider.definePalette('tamrecSteelGray', {
@@ -23,5 +61,21 @@ ngTamrec.config(function($mdThemingProvider) {
     });
 
     $mdThemingProvider.theme('default')
-        .primaryPalette('tamrecSteelGray');
+        .primaryPalette('blue-grey');
+    $mdThemingProvider.theme('podcastsTheme')
+        .primaryPalette('brown');
+    $mdThemingProvider.theme('newsTheme')
+        .primaryPalette('red');
+});
+
+ngTamrec.run(function($rootScope, $urlRouter, $mdSidenav) {
+    $rootScope.$on('$locationChangeSuccess', function(evt) {
+        evt.preventDefault();
+        $mdSidenav('menu').close();
+        $urlRouter.sync();
+    });
+});
+
+ngTamrec.config(function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = true;
 });

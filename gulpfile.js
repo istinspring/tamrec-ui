@@ -11,7 +11,10 @@ var webserver = require('gulp-webserver');
 
 var assetsDest = 'tamrec-ui/build';
 var ghPages = 'gh-pages';
-var lessAssets = 'tamrec-ui/less/main.less';
+var lessAssets = [
+    'tamrec-ui/less/main.less',
+    'tamrec-ui/less/loading-bar.less'
+];
 var jsAssets = [
     'tamrec-ui/js/*.js',
     'tamrec-ui/js/**/*.js'
@@ -23,7 +26,9 @@ var vendorsJS = [
     'tamrec-ui/vendors/angular/angular.js',
     'tamrec-ui/vendors/angular-aria/angular-aria.js',
     'tamrec-ui/vendors/angular-animate/angular-animate.js',
-    'tamrec-ui/vendors/angular-material/angular-material.js'
+    'tamrec-ui/vendors/angular-ui-router/release/angular-ui-router.js',
+    'tamrec-ui/vendors/angular-material/angular-material.js',
+    'tamrec-ui/vendors/angular-loading-bar/build/loading-bar.js'
 ];
 
 gulp.task('watch', function() {
@@ -77,13 +82,17 @@ gulp.task('vendors-js', function() {
         .pipe(gulp.dest(assetsDest));
 });
 
-gulp.task('serve', ['watch'], function() {
-    gulp.src('./tamrec-ui')
-        .pipe(webserver({
-            livereload: true,
-            directoryListing: false,
-            open: true
-        }));
+gulp.task('serve', [
+    'watch', 'compile-less', 'process-js',
+    'vendors-css', 'vendors-js'
+    ],
+    function() {
+        gulp.src('./tamrec-ui')
+            .pipe(webserver({
+                livereload: true,
+                directoryListing: false,
+                open: true
+            }));
 });
 
 gulp.task('see', function () {

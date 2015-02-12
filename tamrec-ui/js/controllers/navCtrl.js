@@ -1,7 +1,6 @@
 ngTamrec = angular.module('ngTamrec');
 
-ngTamrec.controller('IndexCtrl', function ($scope, $mdSidenav, $log) {
-    $scope.message = "Hello!";
+ngTamrec.controller('NavCtrl', function ($scope, $mdSidenav, $log) {
     $scope.toggleMenu = function() {
         $mdSidenav('menu').toggle()
         .then(function(){

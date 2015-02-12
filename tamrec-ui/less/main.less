@@ -1,12 +1,24 @@
 @import "variables.less";
 @import "icons.less";
+@import "animations.less";
 
 
 .tamrec-steel-blue {
     background-color: @top-header-background;
 }
-.tamrec-branding {
-    background-color: #333;
+.tamrec-podcasts {
+    background-color: @podcasts-header-background;
+}
+.tamrec-news {
+    background-color: @news-header-backgorund;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+[ng-cloak].splash {
+    display: block !important;
 }
 
 md-toolbar {
@@ -21,8 +33,7 @@ md-toolbar {
 }
 
 #branding {
-    height: 300px;
-    background-color: 333;
+    height: 400px;
 }
 
 .menuBtn {
