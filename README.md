@@ -1,5 +1,7 @@
 # tamrec-ui
 
+![](https://david-dm.org/istinspring/tamrec-ui.svg)
+
 New UI for [tamrecords.ru](http://tamrecords.ru) experiments impressed by
 [google material design](http://www.google.com/design/spec/material-design/introduction.html).
 
