@@ -3,7 +3,7 @@ Use `flex` [below] to have the content area
 fill the available horizontal display area on the right side
 -->
 
-<div layout="column" flex class="content-wrapper" md-theme="podcastsTheme" id="podcasts">
+<div layout="column" flex class="content-wrapper" md-theme="podcastsTheme" id="podcasts" ng-controller="PodcastsCtrl">
   <md-toolbar>
     <h1>Podcasts</h1>
   </md-toolbar>
@@ -13,12 +13,5 @@ fill the available horizontal display area on the right side
   <md-toolbar>
     <h1>News</h1>
   </md-toolbar>
-  <md-content layout="rows">
-  <md-grid-list md-cols="2" md-row-height="fit">
-    <md-grid-tile>News</md-grid-tile>
-    <md-grid-tile>News</md-grid-tile>
-    <md-grid-tile>News</md-grid-tile>
-    <md-grid-tile>News</md-grid-tile>
-  </md-grid-list>
-  </md-content>
+  <md-content layout="rows"></md-content>
 </div>
